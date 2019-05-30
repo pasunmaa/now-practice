@@ -1,0 +1,10 @@
+{
+    "version": 2,
+    "name": "now-firestore-integration",
+    "env": {
+        "GCLOUD_CREDENTIALS": "./keyfiles/Get-Quote-Serverless-service-account.json"
+    },
+    "builds": [
+        { "src": "*.js", "use": "@now/node" }
+    ]
+}

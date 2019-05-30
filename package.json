@@ -1,0 +1,20 @@
+{
+  "name": "now-practice",
+  "version": "1.0.0",
+  "description": "Practicing gcloud firestore integration with Zeit now",
+  "main": "firestore-backend.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "zeit",
+    "now",
+    "firestore",
+    "integration"
+  ],
+  "author": "Petri Asunmaa",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/firestore": "^2.0.0"
+  }
+}
