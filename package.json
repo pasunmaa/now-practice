@@ -15,6 +15,6 @@
   "author": "Petri Asunmaa",
   "license": "ISC",
   "dependencies": {
-    "@google-cloud/firestore": "^2.0.0"
+    "@google-cloud/firestore": "^2.2.3"
   }
 }
