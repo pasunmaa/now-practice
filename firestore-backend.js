@@ -1,25 +1,12 @@
-const Firestore = require('@google-cloud/firestore');
-
-// Decode base64 string
-function fromB64(string) {
-	return Buffer.from(string, 'base64').toString()
-}
-
-const gcloudKeyfile = fromB64(process.env.GCLOUD_CREDENTIALS)
-
-console.log(gcloudKeyfile)
-//keyfileContent = JSON.parse(GCLOUD_CREDENTIALS)
-//console.log(keyfileContent)
+const Firestore = require('@google-cloud/firestore')
+// set environment variable to point GCLOUD service account keyfile
+// export GOOGLE_APPLICATION_CREDENTIALS="~/Repo/now-practice/keyfile/getquotekeyfile030719.json"
 
 const testDB = async () => {
   try {
     const db = new Firestore({
       projectId: 'platinum-form-233310',
-      //credentials: process.env.GCLOUD_CREDENTIALS,
-      //credentials: GCLOUD_CREDENTIALS,
-      credentials: JSON.parse(gcloudKeyfile),
-      // credentials: { keyfileContent }     // keyfile content goes herekeyfileContent
-      //keyFilename: process.env.GCLOUD_CREDENTIALS,
+      keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS,
     })
     console.log(`Firestore initialized ${db}`)
 
@@ -30,7 +17,7 @@ const testDB = async () => {
       basicinfo: {
         exchange: "XHEL",   
         ticker: "NRE1V",
-        fullname: "Nokian Renkaat Oyj JULKINEN",
+        fullname: "Nokian Renkaat Oyj Public",
         OMXNordicID: "HEX24312",
         YahooID: "NRE1V.HE",
       }
@@ -81,10 +68,3 @@ const testDB = async () => {
 module.exports = {
   testDB
 }
-
-//module.exports = (req, res) => {
-/* exports.http  = async (req, res) => {
-  await testDB()
-  console.log('test DB ran & sending response ...')
-  res.end(`Hello from node.js and firestore-integration on Now 2.0!`)
-} */

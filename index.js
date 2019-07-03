@@ -4,5 +4,5 @@ const firestore = require('./firestore-backend.js')
 exports.testFireStore = async (req, res) => {
   await firestore.testDB()
   console.log('test DB ran & sending response ...')
-  res.end(`Hello from node.js and firestore-integration on Now 2.0!`)
+  res.end(`Hello from node.js modifying Firestore with google cloud SDK`)
 }

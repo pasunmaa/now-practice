@@ -2,7 +2,7 @@
   "name": "now-practice",
   "version": "1.0.0",
   "description": "Practicing gcloud firestore integration with Zeit now",
-  "main": "firestore-backend.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
