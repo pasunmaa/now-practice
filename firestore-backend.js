@@ -8,18 +8,12 @@ function fromB64(string) {
 const gcloudKeyfile = fromB64(process.env.GCLOUD_CREDENTIALS)
 
 console.log(gcloudKeyfile)
-//keyfileContent = JSON.parse(GCLOUD_CREDENTIALS)
-//console.log(keyfileContent)
 
 const testDB = async () => {
   try {
     const db = new Firestore({
       projectId: 'platinum-form-233310',
-      //credentials: process.env.GCLOUD_CREDENTIALS,
-      //credentials: GCLOUD_CREDENTIALS,
       credentials: JSON.parse(gcloudKeyfile),
-      // credentials: { keyfileContent }     // keyfile content goes herekeyfileContent
-      //keyFilename: process.env.GCLOUD_CREDENTIALS,
     })
     console.log(`Firestore initialized ${db}`)
 
@@ -30,7 +24,7 @@ const testDB = async () => {
       basicinfo: {
         exchange: "XHEL",   
         ticker: "NRE1V",
-        fullname: "Nokian Renkaat Oyj JULKINEN",
+        fullname: "Nokian Renkaat Oyj Now Public",
         OMXNordicID: "HEX24312",
         YahooID: "NRE1V.HE",
       }
@@ -81,10 +75,3 @@ const testDB = async () => {
 module.exports = {
   testDB
 }
-
-//module.exports = (req, res) => {
-/* exports.http  = async (req, res) => {
-  await testDB()
-  console.log('test DB ran & sending response ...')
-  res.end(`Hello from node.js and firestore-integration on Now 2.0!`)
-} */
